@@ -1,0 +1,43 @@
+﻿@model Ustaw_temperature.Models.Mieszkanie
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Stwórz mieszkanie</h1>
+<h2>Jeżeli chcesz dołączyć do mieszkania, skontaktuj się z z osobą do kótrej chcesz dołączyć i poproś ją o dodanie</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LiczbaOkien" class="control-label"></label>
+                <input asp-for="LiczbaOkien" class="form-control" />
+                <span asp-validation-for="LiczbaOkien" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LiczbaPokoi" class="control-label"></label>
+                <input asp-for="LiczbaPokoi" class="form-control" />
+                <span asp-validation-for="LiczbaPokoi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BazowaTemperatura" class="control-label"></label>
+                <input asp-for="BazowaTemperatura" class="form-control" />
+                <span asp-validation-for="BazowaTemperatura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-primary">Wróć</a>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

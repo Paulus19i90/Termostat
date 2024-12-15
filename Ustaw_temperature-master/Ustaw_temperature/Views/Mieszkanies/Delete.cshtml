@@ -1,0 +1,39 @@
+﻿@model Ustaw_temperature.Models.Mieszkanie
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Usuwanie mieszkania</h1>
+
+
+<div>
+    <h4>Mieszkanie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LiczbaOkien)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LiczbaOkien)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LiczbaPokoi)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LiczbaPokoi)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BazowaTemperatura)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BazowaTemperatura)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index" class="btn btn-primary">wróć</a>
+    </form>
+</div>

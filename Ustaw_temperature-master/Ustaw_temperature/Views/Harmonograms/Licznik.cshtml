@@ -1,0 +1,19 @@
+﻿@model Ustaw_temperature.Models.Harmonogram
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+    <h4>Symulowane koszty</h4>
+    <hr />
+    <h2>Cena dzienna wynosi: @ViewBag.CenaDzienna PLN</h2>
+    <h2>Cena tygodniowa wynosi: @ViewBag.Cenatygodniowa PLN</h2>
+    <h2>Cena miesięczna wynosi: @ViewBag.Cenamiesieczna PLN</h2>
+</div>
+<div>
+    
+    <a asp-action="Index" class="btn btn-primary">Wróć</a>
+</div>

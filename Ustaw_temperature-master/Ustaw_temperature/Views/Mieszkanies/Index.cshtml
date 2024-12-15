@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Ustaw_temperature.Models.Mieszkanie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Mieszkanie</h1>
+
+<p>
+    @if (ViewData["test"] == null)
+    {
+        <a asp-action="Create" class="btn btn-primary">Stwórz</a>
+    }
+</p>
+
+<table class="table">
+    <thead>
+        
+    </thead>
+    <tbody>
+        @if (ViewData["test"] != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div>
+                            <h3>Dane na temat mieszkania</h3>
+                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">Wyświetl szczegóły</a>
+                        </div>
+
+                        <div>
+                            <h3>Edycja danych mieszkania</h3>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Edytuj</a>
+                        </div>
+
+                        <div>
+                            <h3>Usuń mieszkanie</h3>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-primary">Usuń</a>
+                        </div>
+
+                        <div>
+                            <h3>Dodawanie lub zmiana współlokatora</h3>
+                            <a asp-action="Dodaj" asp-route-id="@item.Id" class="btn btn-primary">Dodaj/Zmień współlokatora</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
